@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 import os
 
 
-data = pd.read_csv(r"C:\Users\espym.LAPTOP-41F90NSA\projects\ml_pipeline\archive\water_potability.csv")
+data = pd.read_csv(r"C:\Users\User\Desktop\projects\Water-Potability-Pipeline\archive\water_potability.csv")
 
 train_data,test_data = train_test_split(data, test_size=0.2, random_state=42)
 

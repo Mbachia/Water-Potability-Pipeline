@@ -9,7 +9,7 @@ app = FastAPI(
     description="Predicting Water Potability"
 )
 
-with open(r"C:\Users\espym.LAPTOP-41F90NSA\projects\ml_pipeline\model.pkl", "rb") as f:
+with open(r"C:\Users\User\Desktop\projects\Water-Potability-Pipeline\model.pkl", "rb") as f:
     model = pickle.load(f)
 
 @app.get("/")
@@ -17,7 +17,7 @@ def index():
     return "Welcome to water Potability Prediction FastAPI"
 
 app.post("/predict")
-def model_preedict(water: Water):
+def model_predict(water: Water):
     sample = pd.DataFrame({
         'ph' : [water.ph],
         'Hardness' : [water.Hardness],
