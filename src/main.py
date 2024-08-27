@@ -16,21 +16,21 @@ with open(r"C:\Users\User\Desktop\projects\Water-Potability-Pipeline\model.pkl",
 def index():
     return "Welcome to water Potability Prediction FastAPI"
 
-app.post("/predict")
+@app.post("/predict")
 def model_predict(water: Water):
     sample = pd.DataFrame({
         'ph' : [water.ph],
         'Hardness' : [water.Hardness],
-        'Solids' :[water.Hardness],
+        'Solids' :[water.Solids],
         'Chloramines' : [water.Chloramines],
         'Sulfate' : [water.Sulfate],
         'Conductivity' : [water.Conductivity],
         'Organic_carbon': [water.Organic_carbon],
-        'Trihalonethanses': [water.Trihalonethanses],
+        'Trihalomethanes': [water.Trihalomethanes],
         'Turbidity' : [water.Turbidity]
     })
 
-    predictions = model.load(sample)
+    predictions = model.predict(sample)
 
     if predictions == 1:
         return "water is consumable"

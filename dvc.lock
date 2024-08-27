@@ -5,13 +5,13 @@ stages:
     deps:
     - path: src/data_collection.py
       hash: md5
-      md5: 597b5ff362e8153d5b7ea0452c008daa
-      size: 501
+      md5: 3ee4abd61462bb9bdba04669a8016acc
+      size: 449
     outs:
     - path: data/raw
       hash: md5
-      md5: c0c2d65c14a603e91e029fda3c344a5c.dir
-      size: 522262
+      md5: 5a70785ae15b50beed1fa349547b177a.dir
+      size: 525609
       nfiles: 2
   pre_prep:
     cmd: python src/data_prep.py
@@ -36,49 +36,49 @@ stages:
     deps:
     - path: data/raw
       hash: md5
-      md5: c0c2d65c14a603e91e029fda3c344a5c.dir
-      size: 522262
+      md5: 5a70785ae15b50beed1fa349547b177a.dir
+      size: 525609
       nfiles: 2
     - path: src/data_prep.py
       hash: md5
-      md5: 752e9dd19a21323aed62f9c1645fe2a6
-      size: 814
+      md5: 4a31de143bbe192f0ee2d98f611c5a85
+      size: 710
     outs:
     - path: data/processed
       hash: md5
-      md5: 09d7d1468d5c1e6739769af7e3154438.dir
-      size: 546137
+      md5: cdd4c18ad8143d5a58bbf57129f9670f.dir
+      size: 549591
       nfiles: 2
   model_building:
     cmd: python src/model_building.py
     deps:
     - path: data/processed
       hash: md5
-      md5: 09d7d1468d5c1e6739769af7e3154438.dir
-      size: 546137
+      md5: cdd4c18ad8143d5a58bbf57129f9670f.dir
+      size: 549591
       nfiles: 2
     - path: src/model_building.py
       hash: md5
-      md5: a99f08e08e7c1e0a40e3dab4e0c648e0
-      size: 527
+      md5: 0822b92957708ecbfae1a94dcc8c5182
+      size: 475
     outs:
     - path: model.pkl
       hash: md5
-      md5: 4664a4324e1dad1bcc04ba82291875ef
-      size: 7369092
+      md5: e9d22dc139257cc5571370238db36be3
+      size: 6611915
   model_eval:
     cmd: python src/model_eval.py
     deps:
     - path: model.pkl
       hash: md5
-      md5: 4664a4324e1dad1bcc04ba82291875ef
-      size: 7369092
+      md5: e9d22dc139257cc5571370238db36be3
+      size: 6611915
     - path: src/model_eval.py
       hash: md5
-      md5: 782187cce263591e7cf319fa082066eb
-      size: 786
+      md5: 343ce6196cb76f7a74409e850515496a
+      size: 734
     outs:
     - path: metrics.json
       hash: md5
-      md5: 7929e93d25d783dc0ab2e572f2479646
-      size: 137
+      md5: 785947da9fd0a54abb3bc5dade6d4ec5
+      size: 152

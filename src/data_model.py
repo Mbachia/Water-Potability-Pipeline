@@ -8,5 +8,5 @@ class Water(BaseModel):
     Sulfate : float
     Conductivity : float
     Organic_carbon: float
-    Trihalonethanses: float
+    Trihalomethanes: float
     Turbidity : float
