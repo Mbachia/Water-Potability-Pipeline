@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 import os
 
-train_data  = pd.read_csv(r"C:\Users\User\Desktop\projects\Water-Potability-Pipeline\data\raw\train.csv")
-test_data = pd.read_csv(r'C:\Users\User\Desktop\projects\Water-Potability-Pipeline\data\raw\train.csv')
+train_data  = pd.read_csv(r"data/raw/train.csv")
+test_data = pd.read_csv(r'data/raw/test.csv')
 
 def fill_null_with_median(df):
     for col in df.columns:
