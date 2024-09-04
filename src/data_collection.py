@@ -14,7 +14,6 @@ def load_params(filepath : str) -> float:
     except Exception as e:
         raise Exception(f"Error loading parameters from {filepath}:{e}")
 
-
 #test_size = yaml.safe_load(open("params.yaml"))["data_collection"]["test_size"]
 
 def load_data(filepath : str) -> pd.DataFrame :
@@ -25,7 +24,7 @@ def load_data(filepath : str) -> pd.DataFrame :
 
 # data = pd.read_csv(r"C:\Users\SFL-3\water_potability.csv")
 
-def split_data(data: pd.DataFrame, test_size: float) -> Tuple[pd.DataFrame, pd.DataFrame]:
+def split_data(data: pd.DataFrame, test_size: float) -> Tuple[pd.DataFrame, pd.DataFrame] :
     try:
         return train_test_split(data, test_size= test_size, random_state=42)
     except Exception as e:
