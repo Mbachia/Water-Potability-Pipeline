@@ -32,8 +32,6 @@ def split_data(data: pd.DataFrame, test_size: float) -> Tuple[pd.DataFrame, pd.D
 
 #train_data, test_data = train_test_split(data, test_size= test_size, random_state=42)
 
-
-
 def save_data(df : pd.DataFrame, filepath: str) -> None:
     try:
         df.to_csv(filepath,index=False)
@@ -42,7 +40,7 @@ def save_data(df : pd.DataFrame, filepath: str) -> None:
     
 
 def main():
-    data_filepath = r"C:\Users\User\Desktop\projects\Water-Potability-Pipeline\archive\water_potability.csv"
+    data_filepath = r"C:\Users\espym.LAPTOP-41F90NSA\projects\ml_pipeline\archive\water_potability.csv"
     params_filepath = "params.yaml"
     raw_data_path = os.path.join("data","raw")
 # data_path = os.path.join("data","raw")

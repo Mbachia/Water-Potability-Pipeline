@@ -12,6 +12,7 @@ def load_data(filepath : str) -> pd.DataFrame:
          return pd.read_csv(filepath)
     except Exception as e:
         raise Exception(f"Error loading data from {filepath}:{e}")
+
 #test_data = pd.read_csv("./data/processed/test_processed.csv")
 
 # X_test = test_data.iloc[:,0:-1].values
